@@ -7,6 +7,7 @@ local get_default_options = function()
     indent_levels = 30;
     indent_guide_size = 1;
     indent_start_level = 1;
+    indent_enable = true;
     --FIXME:
     indent_pretty_mode = false;
     indent_space_guides = true;
@@ -193,6 +194,8 @@ function M.indent_guides_enable()
   if next(new_opts) == nil then
     new_opts = get_default_options()
   end
+  if not new_opts.indent_enable then return end
+
   indent_guides_enable()
   if not indent_enabled then
     M.indent_guides_augroup()
