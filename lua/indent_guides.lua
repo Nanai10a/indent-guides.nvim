@@ -14,8 +14,8 @@ local get_default_options = function()
     indent_tab_guides = false;
     indent_soft_pattern = '\\s';
     exclude_filetypes = {'help','dashboard','dashpreview','NvimTree','vista','sagahover','sagasignature','packer','log','lspsagafinder','lspinfo'};
-    even_colors = { fg = '#23272e',bg = '#23272e' };
-    odd_colors = { fg = '#23272e',bg = '#23272e' };
+    even_colors = { guifg = '#23272e', guibg = '#23272e' };
+    odd_colors = { guifg = '#23272e', guibg = '#23272e' };
   }
   return default_opts
 end
@@ -42,10 +42,10 @@ local indent_highlight_color =function ()
   local even = new_opts.even_colors
   local odd = new_opts.odd_colors
 
-  api.nvim_command('hi IndentGuidesEven guifg=' .. even['fg'] .. ' guibg='.. even['bg'])
-  api.nvim_command('hi IndentGuidesEvenVirtext guifg=' .. even['bg'] .. ' guibg='.. even['fg'])
-  api.nvim_command('hi IndentGuidesOdd guifg=' .. odd['fg'] .. ' guibg='.. odd['bg'])
-  api.nvim_command('hi IndentGuidesOddVirtext guifg=' .. odd['bg'] .. ' guibg='.. odd['fg'])
+  api.nvim_command('hi IndentGuidesEven guifg=' .. even['guifg'] .. ' guibg='.. even['guibg'])
+  api.nvim_command('hi IndentGuidesEvenVirtext guifg=' .. even['guibg'] .. ' guibg='.. even['guifg'])
+  api.nvim_command('hi IndentGuidesOdd guifg=' .. odd['guifg'] .. ' guibg='.. odd['guibg'])
+  api.nvim_command('hi IndentGuidesOddVirtext guifg=' .. odd['guibg'] .. ' guibg='.. odd['guifg'])
 end
 
 local indent_highlight_pattern= function(indent_pattern,column_start,indent_size)
