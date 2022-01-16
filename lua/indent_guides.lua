@@ -42,8 +42,16 @@ local indent_highlight_color =function ()
   local even = new_opts.even_colors
   local odd = new_opts.odd_colors
 
-  local even_specifies = ' guifg=' .. even['guifg'] .. ' guibg='.. even['guibg']
-  local odd_specifies = ' guifg' .. odd['guibg'] .. ' guibg='.. odd['guifg']
+  local even_specifies =
+        ' guifg=' .. even['guifg'] ..
+        ' guibg='.. even['guibg'] ..
+        ' ctermfg=' .. even['ctermfg'] ..
+        ' ctermbg=' .. even['ctermbg']
+  local odd_specifies =
+        ' guifg=' .. odd['guibg'] ..
+        ' guibg='.. odd['guifg'] ..
+        ' ctermfg=' .. odd['ctermfg'] ..
+        ' ctermbg=' .. odd['ctermbg']
 
   api.nvim_command('hi IndentGuidesEven' .. even_specifies)
   api.nvim_command('hi IndentGuidesEvenVirtext' .. even_specifies)
