@@ -14,8 +14,8 @@ local get_default_options = function()
     indent_tab_guides = false;
     indent_soft_pattern = '\\s';
     exclude_filetypes = {'help','dashboard','dashpreview','NvimTree','vista','sagahover','sagasignature','packer','log','lspsagafinder','lspinfo'};
-    even_colors = { guifg = '#23272e', guibg = '#23272e' };
-    odd_colors = { guifg = '#23272e', guibg = '#23272e' };
+    even_colors = { guifg = '#23272e', guibg = '#23272e', ctermfg = '10', ctermbg = '10' };
+    odd_colors = { guifg = '#23272e', guibg = '#23272e', ctermfg = '10', ctermbg = '10' };
   }
   return default_opts
 end
