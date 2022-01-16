@@ -42,10 +42,13 @@ local indent_highlight_color =function ()
   local even = new_opts.even_colors
   local odd = new_opts.odd_colors
 
-  api.nvim_command('hi IndentGuidesEven guifg=' .. even['guifg'] .. ' guibg='.. even['guibg'])
-  api.nvim_command('hi IndentGuidesEvenVirtext guifg=' .. even['guibg'] .. ' guibg='.. even['guifg'])
-  api.nvim_command('hi IndentGuidesOdd guifg=' .. odd['guifg'] .. ' guibg='.. odd['guibg'])
-  api.nvim_command('hi IndentGuidesOddVirtext guifg=' .. odd['guibg'] .. ' guibg='.. odd['guifg'])
+  local even_specifies = ' guifg=' .. even['guifg'] .. ' guibg='.. even['guibg']
+  local odd_specifies = ' guifg' .. odd['guibg'] .. ' guibg='.. odd['guifg']
+
+  api.nvim_command('hi IndentGuidesEven' .. even_specifies)
+  api.nvim_command('hi IndentGuidesEvenVirtext' .. even_specifies)
+  api.nvim_command('hi IndentGuidesOdd' .. odd_specifies)
+  api.nvim_command('hi IndentGuidesOddVirtext' .. odd_specifies)
 end
 
 local indent_highlight_pattern= function(indent_pattern,column_start,indent_size)
